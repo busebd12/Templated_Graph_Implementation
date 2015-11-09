@@ -27,6 +27,11 @@ class Vertex
 		int getWeight() const;
 };
 
+/*
+need to overload the less -than operator because std::map that we are using to represent 
+our adjacency list, and since std::map uses the less-than operator by default to order the elements,
+when we store user-defined type in a map, we need to overload the less-than operator for our own defined type
+*/
 template <typename T>
 bool operator< (const Vertex<T> & v1, const Vertex<T> & v2)
 {
