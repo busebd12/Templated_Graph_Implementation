@@ -16,6 +16,8 @@ class Graph
 		Graph(Graph&& G)=default;  //move constructor
 		Graph& operator=(const Graph& G)=default;   //assignment operator
 		Graph& operator=(Graph&& G)=default;  //copy assignment operator
+		void addVertex(const T& Data, const T& AdjacentData);
+		void print() const;
 		std::map<Vertex<T>, std::vector<Vertex<T>>> getAdjacencyList() const;
 		int getNumberOfElements() const;
 };
