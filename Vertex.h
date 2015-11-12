@@ -1,5 +1,6 @@
 #ifndef VERTEX_H
 #define VERTEX_H
+#include <iostream>
 
 template <typename T>
 class Vertex;
@@ -14,6 +15,7 @@ class Vertex
 	private:
 		T data;
 		int weight;
+		bool visited;
 	public:
 		Vertex();
 		Vertex(const T Data);
@@ -23,8 +25,10 @@ class Vertex
 		Vertex& operator=(Vertex&& V)=default;  //move assignment operator
 		friend bool operator< <T>(const Vertex<T> & v1, const Vertex<T> & v2); //need the <T> since it is a templated friend function
 		void setData(const T Data);
+		void setVisited();
 		T getData() const;
 		int getWeight() const;
+		bool getVisited() const;
 };
 
 /*

@@ -4,6 +4,8 @@
 #include <map>
 #include <vector>
 #include <iostream>
+#include <stack>
+#include <queue>
 template <typename T>
 class Graph
 {	
@@ -16,7 +18,9 @@ class Graph
 		Graph(Graph&& G)=default;  //move constructor
 		Graph& operator=(const Graph& G)=default;   //assignment operator
 		Graph& operator=(Graph&& G)=default;  //copy assignment operator
-		void addVertex(const T& Data, const T& AdjacentData);
+		void addVertexPair(const T& Data, const T& AdjacentData);
+		void depthFirstTraversal();
+		void breadthFirstTraversal();
 		void print() const;
 		std::map<Vertex<T>, std::vector<Vertex<T>>> getAdjacencyList() const;
 		int getNumberOfElements() const;
