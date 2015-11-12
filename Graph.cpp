@@ -65,13 +65,13 @@ void Graph<T>::depthFirstTraversal()
 			auto adjacentVertices=adjacencyList.at(topVertex);
 
 			//go through adjacent vertices and add them to the stack since we haven't visited them yet
-			for(int i=0;i<adjacentVertices.size();++i)
+			for(const auto & vertex : adjacentVertices)
 			{
 				//cout << "Adding adjacent vertex " << adjacentVertices.at(i).getData() << " to the stack" << endl;
 
 				//cout << endl;
 
-				S.push(adjacentVertices.at(i));
+				S.push(vertex);
 			}
 		}
 	}
